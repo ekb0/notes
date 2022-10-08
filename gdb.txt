@@ -1,0 +1,61 @@
+SETUP
+
+https://github.com/cyrus-and/gdb-dashboard
+
+
+EXECUTION
+
+r           : run program (till next breakpoint)
+
+
+STEPPING AROUND
+
+n           : execute next statement
+
+s           : step into function
+
+si          : step for single assembly instruction
+
+c           : continue execution (till next breakpoint)
+
+adv foo     : continue till function foo
+
+fin         : step out of function
+
+
+BREAKPOINTS
+
+b 2         : breakpoint at line 2
+
+b main      : breakpoint at main() function
+
+del 2       : remove breakpoint 2
+
+i b         : list breakpoints
+
+
+EXAMINING PROGRAM STATE
+
+bt          : print call stack
+
+p foo       : print value of variable foo
+
+x/i $pc     : view current instruction
+
+x/<n>i $pc  : view the next n instructions
+
+i reg       : print value of all registers
+
+i reg rax   : print value of register rax
+
+
+SOURCE CODE
+
+edit        : open the source in vim
+
+l main      : print source code for function main
+
+
+MISC
+
+press enter key to repeat the last command

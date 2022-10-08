@@ -1,0 +1,55 @@
+APPEARANCE
+
+set wrap linebreak  : wrap text with break on words
+
+
+SHORTCUTS
+
+<c-w>z              : close scratch window
+
+g<c-]> or <c-]>     : go to definition
+
+ge                  : move to end of previous word
+
+:vim                : vimgrep
+
+:copen and :close   : open and close the quickfix window (results of vimgrep)
+
+:cn and :cp         : next or previous location in quickfix
+
+
+VIM REGEX
+
+Perl   |  Vim      |  Explanation
+
+x?        x\=         Match 0 or 1 of x
+
+x+        x\+         Match 1 or more of x
+
+(xyz)     \(xyz\)     Use brackets to group matches
+
+x{n,m}    x\{n,m}     Match n to m of x
+
+x*?       x\{-}       Match 0 or 1 of x, non-greedy
+
+x+?       x\{-1,}     Match 1 or more of x, non-greedy
+
+\b        \< \>       Word boundaries
+
+$n        \n          Backreferences for previously grouped matches
+
+
+VIM DIGRAPHS
+
+In insert mode, do <c-k>, then the characters of the digraph.
+For the full list of digraphs, do :digraphs
+
+.:  :  ∴        =3  :  ≡        FA  :  ∀
+
+>=  :  ≥        <=  :  ⇐        TE  :  ∃
+
+=<  :  ≤        =>  :  ⇒        -)  :  ∋
+
+!=  :  ≠        ==  :  ⇔
+
++Z  :  ∑        NO  :  ¬

@@ -1,0 +1,14 @@
+To prove a goal of the form:
+
+P → Q
+  1. Assume P is true and then prove Q
+     Form of final proof:
+       Suppose P
+         [Proof of Q goes here]
+       Therefore P → Q
+
+  2. Assume Q is false and prove that P is false (¬Q → ¬P)
+     Form of final proof:
+       Suppose ¬Q
+         [Proof of ¬P goes here]
+       Therefore P → Q
