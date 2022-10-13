@@ -17,6 +17,8 @@ ge                  : move to end of previous word
 
 :cn and :cp         : next or previous location in quickfix
 
+K (on sys function) : open built in man page for function
+
 
 VIM REGEX
 
