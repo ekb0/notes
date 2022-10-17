@@ -19,6 +19,10 @@ ge                  : move to end of previous word
 
 K (on sys function) : open built in man page for function
 
+:tag <symbol>       : search for symbol and hit Enter to jump to it
+
+*                   : highlight all occurrences of word under cursor
+
 
 VIM REGEX
 
