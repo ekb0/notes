@@ -33,5 +33,24 @@
 %r15       %r15d        %r15w      %r15b     Callee saved
 
 
+EXCEPTIONS TO NOTE
+
+* Cannot have both source and destination be memory addresses
+
+* When movl has a register as destination, it sets the high-order portion of the
+  register to 0
+
+
+ASSEMBLY GENERATION COMMANDS
+
+1. Generate assembly code from source:
+
+   $ gcc -Og -S source.c
+
+2. Dissasemble object files:
+
+   $ objdump -d source.o
+
+
 Source:
 Computer Systems: A Programmer's Perspective
