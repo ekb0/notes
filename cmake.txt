@@ -1,0 +1,97 @@
+REFERENCE
+
+https://cmake.org/cmake/help/latest/guide/tutorial/
+
+
+OVERVIEW
+
+cmake                      |  build  |  ctest  |  cpack   |
+-----------------------------------------------------------
+project file generation    |  build  |  test   |  package |
+(configure -> generate)    |         |         |          |
+
+* Project file generation:
+  CMakeLists.txt -> [ cmake project file generator ] -> Makefiles, Ninja, etc
+
+  Eg:
+    $ mkdir build
+    $ cd build
+    $ cmake -G "Unix Makefiles" ../source
+
+  NB:
+    Some generators require generating twice for multiple builds, such as
+    release or debug builds
+
+* Build:
+  $ cmake --build /some/path/build --config Debug --target MyApp
+
+* `man cmake` for cmake command synopsis
+
+
+STRUCTURE
+
+```
+cmake_minimum_required(VERSION major.minor[.patch[.tweak]])
+
+project(
+    projectName
+    [VERSION major.minor[.patch[.tweak]]]
+    [LANGUAGES languageName ...]
+)
+
+set(varName value... [PARENT_SCOPE])
+option(varName "help text" [ON|OFF])
+
+add_executable(targetName [WIN32] [MACOSX_BUNDLE] [EXCLUDE_FROM_ALL]
+    source1
+    [source2 ...]
+)
+
+add_library(libraryName [STATIC | SHARED | MODULE] [EXCLUDE_FROM_ALL]
+    source1
+    [source2 ...]
+)
+
+add_subdirectory(source_dir [binary_dir] [EXCLUDE_FROM_ALL] [SYSTEM])
+
+target_link_libraries(targetName
+    [PRIVATE|PUBLIC|INTERFACE]
+        item1
+        [item2 ...]
+)
+
+target_include_directories(targetName [BEFORE] [SYSTEM]
+    [PRIVATE|PUBLIC|INTERFACE]
+        dir1
+        [dir2 ...]
+)
+```
+
+
+VARIABLES
+
+```
+set(myVar a b c)    # myVar = "a;b;c"
+set(myVar a;b;c)    # myVar = "a;b;c"
+set(myVar "a b c")  # myVar = "a b c"
+set(myVar a b;c)    # myVar = "a;b;c"
+set(myVar a "b c")  # myVar = "a;b c"
+```
+
+NB:
+    Use of an undefined variable results in an empty string being susbtituted
+    with no error or warning
+
+```
+set(foo ab)                 # foo = "ab"
+set(bar ${foo}cd)           # bar = "abcd"
+set(baz ${foo} cd)          # baz = "ab;cd"
+set(myVar ba)               # myVar = "ba"
+set(big "${${myVar}r}ef")   # big = "${bar}ef" = "abcdef"
+set(${foo} xyz)             # ab = "xyz"
+set(bar ${notSetVar})       # bar = ""
+```
+
+Lua-inspired bracket syntax
+    start with: [=[
+    end with:   ]=]
