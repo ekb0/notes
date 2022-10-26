@@ -95,3 +95,4 @@ set(bar ${notSetVar})       # bar = ""
 Lua-inspired bracket syntax
     start with: [=[
     end with:   ]=]
+

@@ -12,3 +12,4 @@ P → Q
        Suppose ¬Q
          [Proof of ¬P goes here]
        Therefore P → Q
+
