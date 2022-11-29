@@ -23,6 +23,8 @@ K (on sys function) : open built in man page for function
 
 *                   : highlight all occurrences of word under cursor
 
+:on                 : keep this window as the only window
+
 
 VIM REGEX
 
