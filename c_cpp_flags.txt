@@ -1,0 +1,7 @@
+FLAGS
+
+-Wall
+-Wextra
+-Wconversion
+-pedantic-errors
+
