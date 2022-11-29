@@ -1,3 +1,5 @@
+REGISTERS
+
 64 (q)  |  32 (l/d)  |  16 (w)  |  8 (b)  |  Convention
 
 %rax       %eax         %ax        %al       Return value
@@ -33,6 +35,16 @@
 %r15       %r15d        %r15w      %r15b     Callee saved
 
 
+INSTRUCTION REFERENCE
+
+http://ref.x86asm.net/coder.html
+
+
+AT&T MNEMONIC VS INTEL MNEMONIC
+
+https://sourceware.org/binutils/docs/as/i386_002dMnemonics.html
+
+
 EXCEPTIONS TO NOTE
 
 * Cannot have both source and destination be memory addresses
@@ -47,11 +59,8 @@ ASSEMBLY GENERATION COMMANDS
 
    $ gcc -Og -S source.c
 
+
 2. Dissasemble object files:
 
    $ objdump -d source.o
-
-
-Source:
-Computer Systems: A Programmer's Perspective
 
