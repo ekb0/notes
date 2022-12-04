@@ -62,5 +62,5 @@ ASSEMBLY GENERATION COMMANDS
 
 2. Dissasemble object files:
 
-   $ objdump -d source.o
+   $ objdump -CD source.o
 
