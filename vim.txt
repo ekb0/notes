@@ -25,6 +25,10 @@ K (on sys function) : open built in man page for function
 
 :on                 : keep this window as the only window
 
+<c-t>               : tab
+
+<c-d>               : inverse tab
+
 
 VIM REGEX
 
