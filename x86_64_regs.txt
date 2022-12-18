@@ -64,3 +64,8 @@ ASSEMBLY GENERATION COMMANDS
 
    $ objdump -CD source.o
 
+   or
+
+   $ objdump -CD source.o | vim -
+   (then `set ft=asm` for syntax highlighting)
+
