@@ -1,0 +1,87 @@
+ARGUMENTS
+
+An argument is valid if the premises cannot all be true without the conclusion
+being true as well.
+
+
+BASIC LAWS
+
+De Morgan's laws:
+    ¬(P ∧ Q) is equivalent to ¬P ∨ ¬Q
+    ¬(P ∨ Q) is equivalent to ¬P ∧ ¬Q
+
+Commutative laws:
+    P ∧ Q is equivalent to Q ∧ P
+    P ∨ Q is equivalent to Q ∨ P
+
+Associative laws:
+    P ∧ (Q ∧ R) is equivalent to (P ∧ Q) ∧ R
+    P ∨ (Q ∧ R) is equivalent to (P ∨ Q) ∧ R
+
+Idempotent laws:
+    P ∧ P is equivalent to P
+    P ∨ P is equivalent to P
+
+Distributive laws:
+    P ∧ (Q ∨ R) is equivalent to (P ∧ Q) ∨ (P ∧ R)
+    P ∨ (Q ∧ R) is equivalent to (P ∨ Q) ∧ (P ∨ R)
+
+Absorption laws:
+    P ∨ (P ∧ Q) is equivalent to P
+    P ∧ (P ∨ Q) is equivalent to P
+
+Double negation law:
+    ¬¬P is equivalent to P
+
+Tautology laws (A tautology is always true):
+    P ∧ (a tautology) is equivalent to P
+    P ∨ (a tautology) is a tautology
+    ¬(a tautology) is a contradiction
+
+Contradiction laws (A contradiction is always false):
+    P ∧ (a contradiction) is a contradiction
+    P ∨ (a contradiction) is equivalent to P
+    ¬(a contradiction) is a tautology
+
+
+VARIABLES
+
+Given a variable x, a statement S about x can be notated as S(x).
+Eg; let P(x) stand for 'x is a prime number'
+
+
+SETS
+
+* A convenient notation for defining sets is as follows:
+        B = {x | x is a prime number},
+    read as;
+        B is equal to the set of all x such that x is a prime number.
+
+* When an element belongs to a set, the 'elementhood test' for the set defines a
+  property of the element.
+  Eg;
+        y ∈ {x | x² < 9} means y² < 9
+  NB:
+        The above is a statement about y not x! y is a _free_ variable whereas x
+        is a _bound_ variable.
+
+
+TRUTH SETS
+
+The truth set of a statement P(x) is the set of all values of x that make the
+statement P(x) true. In other words, it is the set defined by using the
+statement P(x) as an elementhood test: {x | P(x)}
+
+
+UNIVERSE OF DISCOURSE (Like `concepts` in C++?)
+
+When a statement contains free variables, it is often clear from context that
+these variables stand for objects of a particular kind. The set of all objects
+of this kind is called the universe of discourse. Variables are said to _range_
+over the universe of discourse.
+
+The universe of discourse, U of a set is notated as:
+    {x ∈ U | P(x)}
+read as;
+    the set of all x in U such that P(x)
+
