@@ -60,9 +60,9 @@ For the full list of digraphs, do :digraphs
 
 >=  :  ≥        <=  :  ⇐        TE  :  ∃
 
-=<  :  ≤        =>  :  ⇒        -)  :  ∋
+=<  :  ≤        =>  :  ⇒        (-  :  ∈
 
-!=  :  ≠        ==  :  ⇔
+!=  :  ≠        ==  :  ⇔        AN  :  ∧
 
-+Z  :  ∑        NO  :  ¬
++Z  :  ∑        NO  :  ¬        OR  :  ∨
 
