@@ -27,8 +27,8 @@ Distributive laws:
     P ∨ (Q ∧ R) is equivalent to (P ∨ Q) ∧ (P ∨ R)
 
 Absorption laws:
-    P ∨ (P ∧ Q) is equivalent to P
-    P ∧ (P ∨ Q) is equivalent to P
+    P ∨ (P ∧ Q) is equivalent to P [read as 'satisfies P only or both P and Q']
+    P ∧ (P ∨ Q) is equivalent to P [read as 'satisfies P or Q but always P']
 
 Double negation law:
     ¬¬P is equivalent to P
@@ -84,4 +84,16 @@ The universe of discourse, U of a set is notated as:
     {x ∈ U | P(x)}
 read as;
     the set of all x in U such that P(x)
+
+
+OPERATIONS ON SETS
+
+The intersection of two sets A and B is the set A ∩ B defined as:
+    A ∩ B = {x | x ∈ A and x ∈ B}
+
+The union of two sets A and B is the set A ∪ B defined as:
+    A ∪ B = {x | x ∈ A or x ∈ B}
+
+The difference of two sets A and B is the set A \ B defined as:
+    A \ B = {x | x ∈ A and x ∉ B}
 
