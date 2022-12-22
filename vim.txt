@@ -54,15 +54,24 @@ $n        \n          Backreferences for previously grouped matches
 VIM DIGRAPHS
 
 In insert mode, do <c-k>, then the characters of the digraph.
-For the full list of digraphs, do :digraphs
+For the full list of digraphs, do :help digraph-table
 
-.:  :  ∴        =3  :  ≡        FA  :  ∀
+.:  :  ∴        =3  :  ≡        FA  :  ∀        (U  :  ∩
 
->=  :  ≥        <=  :  ⇐        TE  :  ∃
+>=  :  ≥        <=  :  ⇐        TE  :  ∃        )U  :  ∪
 
 =<  :  ≤        =>  :  ⇒        (-  :  ∈
 
 !=  :  ≠        ==  :  ⇔        AN  :  ∧
 
 +Z  :  ∑        NO  :  ¬        OR  :  ∨
+
+
+UNICODE.VIM
+
+A much better alternative to digraphs, if plugins can be installed, is to
+use unicode.vim
+
+Salient bit to insert a unicode symbol at the current position is:
+    :UnicodeSearch! <name of symbol>
 
