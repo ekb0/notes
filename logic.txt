@@ -97,3 +97,55 @@ The union of two sets A and B is the set A ∪ B defined as:
 The difference of two sets A and B is the set A \ B defined as:
     A \ B = {x | x ∈ A and x ∉ B}
 
+
+NB: The logical connectives can only be used to combine statements, whereas the
+set operations must be used to combine sets.
+
+
+CONDITIONAL STATEMENTS
+
+Conditional statements take the form P → Q (If P then Q) where P is called the
+antecedent and Q, the consequent.
+
+P  |  Q  |  P → Q
+-----------------
+F     F     T
+F     T     T
+T     F     F
+T     T     T
+
+P → Q is equivalent to ¬P ∨ Q
+P → Q is equivalent to ¬(P ∧ ¬Q)
+
+
+CONVERSE AND CONTRAPOSITIVE
+
+The converse of P → Q is Q → P. A conditional is not the same as its converse.
+
+The contrapositive of P → Q is ¬Q → ¬P, and according to the contrapositive law:
+    P → Q is equivalent to ¬Q → ¬P
+
+
+OTHER WAYS OF EXPRESSING THE CONDITIONAL
+
+Given the conditional P → Q, this can be expressed as:
+    P implies Q
+    Q, if P
+    P only if Q
+    P is a sufficient condition for Q
+    Q is a necessary condition for P
+
+
+BICONDITIONAL STATEMENTS
+
+Biconditional statements take the form P ↔ Q
+
+P ↔ Q is equivalent to Q ↔ P
+
+This is read P iff Q (P if and only if Q):
+    P if Q because of the conditional Q → P
+    P only if Q because of the conditional P → Q
+
+
+QUANTIFIERS
+
