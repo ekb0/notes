@@ -1,3 +1,40 @@
+GENERAL STACK FRAME STRUCTURE
+
+stack bottom -->  --------------------
+                  |                  |
+                  |       .          |
+                  |       .          |
+                  |       .          |
+                  |                  |
+                  -------------------- --> Earlier frame
+                  |       .          |
+                  |       .          |
+                  |------------------|
+                  |  Argument n      |
+                  |------------------|
+                  |       .          |
+                  |       .          |
+                  |------------------|
+                  |  Argument 7      |
+                  |------------------|
+                  |  Return address  |
+                  -------------------- --> Frame for calling function P
+                  |                  |
+                  |  Saved registers |
+                  |                  |
+                  |------------------|
+                  |                  |
+                  |  Local variables |
+                  |                  |
+                  |------------------|
+                  |                  |
+                  |  Argument build  |
+                  |  area            |
+                  |                  |
+stack top ----->  -------------------- --> Frame for executing function Q
+(%rsp)
+
+
 REGISTERS
 
 64 (q)  |  32 (l/d)  |  16 (w)  |  8 (b)  |  Convention
