@@ -1,12 +1,12 @@
 GENERAL STACK FRAME STRUCTURE
 
-stack bottom -->  --------------------
+stack bottom -->   ------------------
                   |                  |
                   |       .          |
                   |       .          |
                   |       .          |
                   |                  |
-                  -------------------- --> Earlier frame
+                   ------------------  --> Earlier frame
                   |       .          |
                   |       .          |
                   |------------------|
@@ -18,7 +18,7 @@ stack bottom -->  --------------------
                   |  Argument 7      |
                   |------------------|
                   |  Return address  |
-                  -------------------- --> Frame for calling function P
+                   ------------------  --> Frame for calling function P
                   |                  |
                   |  Saved registers |
                   |                  |
@@ -31,7 +31,7 @@ stack bottom -->  --------------------
                   |  Argument build  |
                   |  area            |
                   |                  |
-stack top ----->  -------------------- --> Frame for executing function Q
+stack top ----->   ------------------  --> Frame for executing function Q
 (%rsp)
 
 
