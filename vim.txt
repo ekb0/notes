@@ -29,6 +29,21 @@ K (on sys function) : open built in man page for function
 
 <c-d>               : inverse tab
 
+:vertical resize 85
+
+:sb <fuzzy search>  : switch to pane matching <fuzzy search>
+
+
+OPTIONS
+
+// fold document by syntax or indent, with fold depth
+set foldmethod=syntax
+set foldmethod=indent
+set foldnextmax=1
+
+// number lines by relative position from current line
+set relativenumber
+
 
 VIM REGEX
 
@@ -74,4 +89,13 @@ use unicode.vim
 
 Salient bit to insert a unicode symbol at the current position is:
     :UnicodeSearch! <name of symbol>
+
+
+NVIM
+=ap  -> indenting
+
+
+NETRW
+%   -> create file
+d   -> create directory
 

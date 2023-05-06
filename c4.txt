@@ -1,0 +1,31 @@
+C4 ARCHITECTURE APPROACH
+
+-------------------------------------------------------------------
+| System Context                                                  |
+|   --------------------------------------------------------------|
+|   | Containers: eg, website, web service, mobile apps, database |
+|   |   ----------------------------------------------------------|
+|   |   | Components                                              |
+|   |   |   ------------------------------------------------------|
+|   |   |   | Classes and/or modules                              |
+------------------------------------------------------------------
+
+* The “system context” is the top level, representing the entire system.
+
+* The system context comprises a number of “containers,” which are deployable
+  units such as a website, a web service, a database, and so on.
+
+* Each container in turn comprises a number of “components,” which are the
+  major structural building blocks in the code.
+
+* Finally, each component comprises a number of “classes” (or in a functional
+  architecture, “modules”) that contain a set of low-level methods or
+  functions.
+
+
+THE GOAL
+
+The goal is to define the various boundaries between containers, components,
+and modules, such that when new requirements arise, the "cost of change" is
+minimized.
+

@@ -2,6 +2,8 @@ FLAGS
 
 -Wall
 -Wextra
+-Werror
 -Wconversion
 -pedantic-errors
+-Wold-style-cast
 

@@ -1,0 +1,165 @@
+BUSINESS ACTIVITIES
+
+Scenario (Story):
+    A goal that the user wants to achieve, such as placing an order.
+
+    Use Case:
+        A more detailed version of a scenario, which describes in general terms
+        the user interactions and other steps that the user needs to take to
+        accomplish a goal.
+
+Business Process:
+    A goal that the business (rather than an individual user) wants to achieve.
+    Similar to scenario, but with a business-centric focus rather than a user-
+    centric focus.
+
+    Workflow:
+        A detailed description of part of a business process ie it lists the
+        exact steps that an employee (or software component) needs to do to
+        accomplish a business goal or subgoal.
+
+
+PLACE ORDER WORKFLOW USING TEXT-BASED LANGUAGE
+
+Workflow: "Place order"
+    triggered by:
+        "Order form received" event (when Quote is not checked)
+    primary input:
+        An order form
+    other input:
+        Product catalog
+    output events:
+        "Order Placed" event
+    side-effects:
+        An acknowledgment is sent to the customer, along with the placed order
+
+
+DATA STRUCTURES FOR THE WORKFLOW
+
+data Order =
+    CustomerInfo
+    AND ShippingAddress
+    AND BillingAddress
+    AND list of OrderLines
+    AND AmountToBill
+
+data OrderLine =
+    Product
+    AND Quantity
+    AND Price
+
+data CustomerInfo = ???   // don't know yet
+data BillingAddress = ??? // don't know yet
+
+
+REPRESENTING CONSTRAINTS
+
+context: Order-Taking
+
+data WidgetCode = string starting with "W" then 4 digits
+data GizmoCode = string starting with "G" then 3 digits
+data ProductCode = WidgetCode OR GizmoCode
+
+data OrderQuantity = UnitQuantity OR KilogramQuantity
+
+data UnitQuantity = integer between 1 and 1000
+data KilogramQuantity = decimal between 0.05 and 100.00
+
+
+REVISITING THE TRANSFORMATION OF ORDERS
+
+data UnvalidatedOrder =
+    UnvalidatedCustomerInfo
+    AND UnvalidatedShippingAddress
+    AND UnvalidatedBillingAddress
+    AND list of UnvalidatedOrderLine
+
+data UnvalidatedOrderLine =
+    UnvalidatedProductCode
+    AND UnvalidatedOrderQuantity
+
+data ValidatedOrder =
+    ValidatedCustomerInfo
+    AND ValidatedShippingAddress
+    AND ValidatedBillingAddress
+    AND list of ValidatedOrderLine
+
+data ValidatedOrderLine =
+    ValidatedProductCode
+    AND ValidatedOrderQuantity
+
+data PricedOrder =
+    ValidatedCustomerInfo
+    AND ValidatedShippingAddress
+    AND ValidatedBillingAddress
+    AND list of PricedOrderLine     // different from ValidatedOrderLine
+    AND AmountToBill                // new
+
+data PricedOrderLine =
+    ValidatedOrderLine
+    AND LinePrice                   // new
+
+data PlacedOrderAcknowledgment =
+    PricedOrder
+    AND AcknowledgmentLetter
+
+
+WORKFLOW WITH VALIDATION AND PRICING
+
+workflow "Place Order" =
+    input: OrderForm
+    output:
+        OrderPlaced event (put on a pile to send to other teams)
+        OR InvalidOrder (put on appropriate pile)
+
+    // step 1
+    do ValidateOrder
+    If order is invalid then:
+        add InvalidOrder to pile
+        stop
+
+    // step 2
+    do PriceOrder
+
+    // step 3
+    do SendAcknowledgmentToCustomer
+
+    // step 4
+    return OrderPlaced event (if no errors)
+
+
+SUBSTEPS
+
+substep "ValidateOrder" =
+    input: UnvalidatedOrder
+    output: ValidatedOrder OR ValidationError
+    dependencies: CheckProductCodeExists, CheckAddressExists
+
+    validate the customer name
+    check that the shipping and billing address exist
+    for each line:
+        check product code syntax
+        check that product code exists in ProductCatalog
+
+    if everything is OK, then:
+        return ValidatedOrder
+    else:
+        return ValidationError
+
+substep "PriceOrder" =
+    input: ValidatedOrder
+    output: PricedOrder
+    dependencies: GetProductPrice
+
+    for each line:
+        get the price for the product
+        set the price for the line
+    set the amount to bill ( = sum of the line prices)
+
+substep "SendAcknowledgmentToCustomer" =
+    input: PricedOrder
+    output: None
+
+    create acknowledgment letter and send it and the priced order to the
+    customer
+
