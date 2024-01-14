@@ -1,19 +1,18 @@
 # Table of Contents
 
-* Introduction
-* Prelude
+* Prologue
     * Recap: Structured Programming and Go To Statement Considered Harmful
 * The Big Picture
-    * Domain organisation
+    * The Domain
     * Vertical Slice Architecture
-* Implementation
-    * Statements, Values, Variables and Expressions
+* The Minute Details
+    * Values, References, Statements and Expressions
     * Scopes
     * Functions
     * Exceptions
     * Classes and State
-    * Algorithms and Interfaces
     * Type Classes
+    * Algorithms and Interfaces
     * Libraries
     * Resource Management
     * Concurrency
